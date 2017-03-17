@@ -112,6 +112,10 @@ void StageManager::run(debruijn_graph::conj_graph_pack& g,
     auto start_stage = stages_.begin();
     if (start_from) {
         INFO("start_from=" << start_from);
+        INFO(stages_);
+        // for (int i = 0; i < stages_.size(); i++) {
+        //   INFO(stages_[i]);
+        // }
         start_stage = std::find_if(stages_.begin(), stages_.end(), StageIdComparator(start_from));
         if (start_stage == stages_.end()) {
             ERROR("Invalid start stage specified: " << start_from);
